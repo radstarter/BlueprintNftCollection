@@ -1,0 +1,26 @@
+[package]
+name = "bp-nft-project"
+version = "0.1.2"
+edition = "2021"
+
+[dependencies]
+sbor = { path = "../radixdlt-scrypto/sbor" }
+scrypto = { path = "../radixdlt-scrypto/scrypto" }
+
+hex = { version = "0.4", default-features = false }
+
+[dev-dependencies]
+radix-engine = { path = "../radixdlt-scrypto/radix-engine" }
+transaction = { path = "../radixdlt-scrypto/transaction" }
+scrypto-unit = { path = "../radixdlt-scrypto/scrypto-unit" }
+
+[profile.release]
+opt-level = 's'        # Optimize for size.
+lto = true             # Enable Link Time Optimization.
+codegen-units = 1      # Reduce number of codegen units to increase optimizations.
+panic = 'abort'        # Abort on panic.
+strip = "debuginfo"    # Strip debug info. 
+overflow-checks = true # Panic in the case of an overflow.
+
+[lib]
+crate-type = ["cdylib", "lib"]
