@@ -1,26 +1,31 @@
 [package]
 name = "bp-nft-project"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
+resolver = "2"
 
 [dependencies]
-sbor = { path = "../radixdlt-scrypto/sbor" }
-scrypto = { path = "../radixdlt-scrypto/scrypto" }
-
-hex = { version = "0.4", default-features = false }
+sbor = { git = "https://github.com/radixdlt/radixdlt-scrypto", tag = "v1.0.0" }
+scrypto = { git = "https://github.com/radixdlt/radixdlt-scrypto", tag = "v1.0.0" }
 
 [dev-dependencies]
-radix-engine = { path = "../radixdlt-scrypto/radix-engine" }
-transaction = { path = "../radixdlt-scrypto/transaction" }
-scrypto-unit = { path = "../radixdlt-scrypto/scrypto-unit" }
+transaction = { git = "https://github.com/radixdlt/radixdlt-scrypto", tag = "v1.0.0" }
+radix-engine = { git = "https://github.com/radixdlt/radixdlt-scrypto", tag = "v1.0.0" }
+scrypto-unit = { git = "https://github.com/radixdlt/radixdlt-scrypto", tag = "v1.0.0" }
 
 [profile.release]
-opt-level = 's'        # Optimize for size.
+opt-level = 'z'        # Optimize for size.
 lto = true             # Enable Link Time Optimization.
 codegen-units = 1      # Reduce number of codegen units to increase optimizations.
 panic = 'abort'        # Abort on panic.
-strip = "debuginfo"    # Strip debug info. 
+strip = true    # Strip the symbols.
 overflow-checks = true # Panic in the case of an overflow.
+
+[features]
+default = []
+test = []
 
 [lib]
 crate-type = ["cdylib", "lib"]
+
+[workspace]

@@ -2,23 +2,23 @@
 
 ## Goal
 
-Manage the NFT collection for Primary and secondary market
+Manage the NFT collection for Primary market
 
-This blueprint is currently specialised for NFT Collection where the user can choose which NFT They want to buy
+This blueprint is specialised for NFT Collection where the user can choose which NFT they want to buy
 
 ## Currently implemented
 
-- [ ] Mint NFT
-- [ ] Fixed Cost
-- [ ] Dutch Auction
-- [ ] English Auction
+- Mint NFT
+- Fixed Cost
+- Whitelist
+- Imphala Fees
 
-## Milestone 1 (Before initial release)
+# Implemented not used
 
-- [ ] Whitelist
+- Dutch Auction
 
-## Milestone 2 (After initial release)
+# To implement
 
-- [ ] Secondary market (English Auction and Fixed Cost)
-- [ ] Panini Collection (User buy Random NFT)
-- [ ] Utility NFT
+- IPFS
+- Royalties
+- English Auction
